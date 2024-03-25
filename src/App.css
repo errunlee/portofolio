@@ -100,17 +100,18 @@ blockquote p {
 }
 .project_cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
 }
 .project_cards .box {
   flex-direction: column;
   border: 1px solid #eecfbf;
-  height: 450px;
+  height: 350px;
   margin: 9px 5px;
   display: flex;
   align-items: center;
   position: relative;
   padding: 13px;
+  font-size: 1rem;
   /* opacity: 0; */
   /* transform: translateX(-100px); */
 }
@@ -161,4 +162,8 @@ blockquote p {
 }
 .footer h1 {
   font-size: 5rem;
+}
+
+blockquote {
+  height: 100vh;
 }
