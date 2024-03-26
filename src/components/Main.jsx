@@ -36,18 +36,22 @@ const Main = () => {
                         max: 0,
                         bounceDamping: 8
                     }} className='overflow-hidden'>
-                    <motion.h1
-                        initial={{ x: '-100%' }}
-                        animate={{ x: 0 }}
-                        transition={{ type: "spring", duration: 1, delay: 0.3, bounce: 0.2 }}
-                    >
-                        Hallo, I'm Arun Khatri
-                    </motion.h1>
-                    <motion.p
-                        initial={{ x: '-110%' }}
-                        animate={{ x: 0 }}
-                        transition={{ duration: 0.5, delay: 1 }}
-                    >Student,Developer,Learner</motion.p>
+                    <div>
+
+                        <motion.h1
+                            initial={{ x: '-100%' }}
+                            animate={{ x: 0 }}
+                            transition={{ type: "spring", duration: 1, delay: 0.5, bounce: 0.2 }}
+                        >
+                            Hello, I'm Arun Khatri.
+                        </motion.h1>
+                        <motion.p
+                            initial={{ x: '-110%' }}
+                            animate={{ x: 0 }}
+                            transition={{ duration: 0.5, delay: 1 }}
+                        >Student,Developer,Learner</motion.p>
+                    </div>
+
                 </motion.header>
 
                 <motion.blockquote
@@ -69,9 +73,8 @@ const Main = () => {
 
 
                 <LangsAndTools />
-                <blockquote>
+                <blockquote className='bg-none'>
                     <p id="quote">{quote.quote}</p>
-                    <br />
                     <p id="author"> -{quote.author}</p>
                 </blockquote>
 

@@ -22,7 +22,7 @@ main {
   position: absolute;
   width: 100%;
   margin: 0px auto;
-  padding: 120px 0px;
+  padding: 0 0 120px 0px;
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -44,12 +44,11 @@ canvas {
 }
 
 header {
-  background: var(--dark-bg);
   grid-column: 2 / span 5;
   font-size: 2.5rem;
-  padding: 2rem;
-  margin-bottom: var(--spacing);
-  border-radius: 20px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
   /* inner glow 👇 */
   box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
     /* shadow ring 👇 */ 0 0 0 1px hsla(0, 0%, 0%, 0.05),
@@ -57,6 +56,11 @@ header {
     0 0.9px 1.5px hsla(0, 0%, 0%, 0.045), 0 3.5px 6px hsla(0, 0%, 0%, 0.09);
 }
 
+header > * {
+  background: var(--dark-bg);
+  padding: 2rem;
+  border-radius: 20px;
+}
 header h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
@@ -78,7 +82,6 @@ blockquote {
   margin: 0;
   padding: 0;
   grid-column: 2 / span 9;
-  margin-bottom: var(--spacing);
   /* background: var(--dark-bg); */
 }
 
@@ -166,4 +169,11 @@ blockquote p {
 
 blockquote:not(:last-child) {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+blockquote:last-child {
+  margin-bottom: 4rem;
 }

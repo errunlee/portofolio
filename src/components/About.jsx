@@ -11,7 +11,7 @@ const About = () => {
                 }}
                 initial={{ y: '-100%' }}
                 whileInView={{ y: 0 }}
-                transition={{ duration: 2 }}
+                transition={{ duration: 1 }}
             >
                 <h2>📜 About Me</h2>
                 <p class="about">

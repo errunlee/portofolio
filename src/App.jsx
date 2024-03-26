@@ -60,7 +60,7 @@ function App() {
     scene.add(jeff);
 
 
-    const moon = new THREE.Mesh(
+    const moon = new THREE.Line(
       new THREE.BoxGeometry(4, 4, 4),
       new THREE.MeshNormalMaterial()
     );

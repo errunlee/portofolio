@@ -17,7 +17,7 @@ const LangsAndTools = () => {
                 />
             </div>
 
-            <marquee behaviour='alternate' scrollamount='30'>
+            <marquee behaviour='alternate' scrollamount='20'>
 
                 <div class="skills flex justify-center">
                     <img
