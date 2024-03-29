@@ -31,7 +31,7 @@ const Projects = () => {
                                 <motion.div key={ind}
                                     initial={{ scale: 0 }}
                                     animate={{ scale: isParentAnimated ? 1 : 0 }}
-                                    transition={{ duration: 0.4, delay: duration += 0.3 }}
+                                    transition={{ duration: 0.4, delay: duration += 0.2 }}
                                     class="box reveal">
                                     <img src={imageSrc} alt="note image" />
                                     <h2>{title}</h2>

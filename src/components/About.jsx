@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 const About = () => {
     return (
-        <>
+        <div className='flex w-[70%] items-center'>
             <motion.section
                 drag dragTransition={{
                     min: 0,
@@ -22,7 +22,7 @@ const About = () => {
 
 
             </motion.section>
-        </>
+        </div>
     )
 }
 

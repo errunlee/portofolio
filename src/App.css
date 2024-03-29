@@ -24,7 +24,8 @@ main {
   margin: 0px auto;
   padding: 0 0 120px 0px;
 
-  display: grid;
+  /* display: grid; */
+  padding: 1rem 4rem;
   grid-template-columns: repeat(12, 1fr);
 }
 
@@ -49,11 +50,6 @@ header {
   height: 100vh;
   display: flex;
   align-items: center;
-  /* inner glow 👇 */
-  box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
-    /* shadow ring 👇 */ 0 0 0 1px hsla(0, 0%, 0%, 0.05),
-    /* multiple soft shadows 👇 */ 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
-    0 0.9px 1.5px hsla(0, 0%, 0%, 0.045), 0 3.5px 6px hsla(0, 0%, 0%, 0.09);
 }
 
 header > * {
@@ -64,6 +60,7 @@ header > * {
 header h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
+  font-weight: 700 !important;
 }
 section {
   grid-column: 2 / 8;
@@ -71,7 +68,6 @@ section {
   background: var(--dark-bg);
   font-size: 1.25rem;
   line-height: 1.5;
-  margin-bottom: var(--spacing);
 }
 
 section .about::first-letter {
@@ -150,9 +146,6 @@ blockquote p {
   border-bottom: 2px solid purple;
 }
 
-.langsandtools {
-  grid-column: 2/12;
-}
 .footer .imgs {
   margin: 10px 0;
 }
@@ -175,5 +168,13 @@ blockquote:not(:last-child) {
 }
 
 blockquote:last-child {
-  margin-bottom: 4rem;
+  margin-bottom: 10rem;
+}
+
+main > * {
+  min-height: 100vh;
+}
+
+main :last-child {
+  min-height: auto !important;
 }
