@@ -10,7 +10,6 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 function App() {
   useEffect(() => {
 
-    // Rest of your code remains unchanged
     // Setup
     const scene = new THREE.Scene();
 
@@ -53,7 +52,7 @@ function App() {
     const jeffTexture = new THREE.TextureLoader().load(dp);
 
     const jeff = new THREE.Mesh(
-      new THREE.PlaneGeometry(3, 3),
+      new THREE.BoxGeometry(2, 2, 2),
       new THREE.MeshBasicMaterial({ map: jeffTexture, side: THREE.DoubleSide })
     );
 
@@ -115,6 +114,8 @@ function App() {
 
       jeff.rotation.y += 0.006;
       // jeff.rotation.z += 0.006;
+      // jeff.rotation.x += 0.006;
+
       starmesh.rotation.y += 0.0005;
       // controls.update();
 

@@ -31,14 +31,15 @@ const Main = () => {
         <>
             <main>
                 <motion.header
-                    drag dragTransition={{
-                        min: 0,
-                        max: 0,
-                        bounceDamping: 8
-                    }} className='overflow-hidden'>
+                    className='overflow-hidden mb-1'>
                     <div>
 
                         <motion.h1
+                            drag dragTransition={{
+                                min: 0,
+                                max: 0,
+                                bounceDamping: 8
+                            }}
                             initial={{ x: '-100%' }}
                             animate={{ x: 0 }}
                             transition={{ type: "spring", duration: 1, delay: 0.5, bounce: 0.2 }}
@@ -59,13 +60,13 @@ const Main = () => {
                     whileInView={{ x: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: false }}
-                    drag dragTransition={{
+
+                >
+                    <motion.p drag dragTransition={{
                         min: 0,
                         max: 0,
                         bounceDamping: 8
-                    }}
-                >
-                    <motion.p>Imma hungry learner who likes creating cool webapps...</motion.p>
+                    }}>Imma hungry learner who likes creating cool webapps...</motion.p>
                 </motion.blockquote>
 
                 <Projects />
