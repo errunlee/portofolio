@@ -6,6 +6,7 @@ import dp from './assets/jeff.png'
 import water from './assets/water.avif'
 import Main from './components/Main';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import * as dat from "lil-gui";
 
 function App() {
   useEffect(() => {
@@ -37,15 +38,13 @@ function App() {
     const material = new THREE.MeshBasicMaterial({ color: 0x524947 });
     const torus = new THREE.Line(geometry, material);
     scene.add(torus);
-
+    torus.position.setZ(-20)
     // Lights
     const pointLight = new THREE.PointLight(0xffffff);
     pointLight.position.set(5, 5, 5);
 
     const ambientLight = new THREE.AmbientLight(0xffffff);
     scene.add(pointLight, ambientLight);
-
-
 
 
     // Avatar
@@ -71,8 +70,15 @@ function App() {
     moon.position.setX(-10);
 
     jeff.position.z = -5;
-    jeff.position.x = 2;
 
+    if (window.innerWidth < 1000) {
+      jeff.position.x = 0;
+      jeff.position.y = 1
+    }
+    else {
+      jeff.position.x = 3;
+      jeff.position.y = 0
+    }
     // Scroll Animation
     function moveCamera() {
       const t = document.body.getBoundingClientRect().top;
@@ -81,6 +87,8 @@ function App() {
       moon.rotation.z += 0.01;
 
       jeff.rotation.y += 0.01;
+
+
 
       camera.position.z = t * -0.01;
       camera.position.x = t * -0.0002;

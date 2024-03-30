@@ -23,18 +23,19 @@ const Main = () => {
                 let random = Math.floor(Math.random() * val.length);
                 setQuote({
                     quote: val[random].text,
-                    author: val[random].author
+                    author: val[random].author.slice(0, -10)
                 });
             });
     }, [])
     return (
         <>
-            <main>
+            <main className=' px-2 lg:py-[1rem] lg:px-[4rem] pt-[20vh]  lg:pt-0 '>
                 <motion.header
-                    className='overflow-hidden mb-1'>
+                    className='overflow-hidden mb-1 lg:max-w-[50%] h-[80vh] lg:h[100vh]'>
                     <div>
 
                         <motion.h1
+                            className=' text-5xl lg:text-7xl '
                             drag dragTransition={{
                                 min: 0,
                                 max: 0,
@@ -47,6 +48,7 @@ const Main = () => {
                             Hello, I'm Arun Khatri.
                         </motion.h1>
                         <motion.p
+                            className='text-xl lg:text-4xl'
                             initial={{ x: '-110%' }}
                             animate={{ x: 0 }}
                             transition={{ duration: 0.5, delay: 1 }}
@@ -62,11 +64,13 @@ const Main = () => {
                     viewport={{ once: false }}
 
                 >
-                    <motion.p drag dragTransition={{
-                        min: 0,
-                        max: 0,
-                        bounceDamping: 8
-                    }}>Imma hungry learner who likes creating cool webapps...</motion.p>
+                    <motion.p
+                        className='text-3xl lg:text-7xl '
+                        drag dragTransition={{
+                            min: 0,
+                            max: 0,
+                            bounceDamping: 8
+                        }}>Imma hungry learner who likes creating cool webapps...</motion.p>
                 </motion.blockquote>
 
                 <Projects />
@@ -75,8 +79,8 @@ const Main = () => {
 
                 <LangsAndTools />
                 <blockquote className='bg-none'>
-                    <p id="quote">{quote.quote}</p>
-                    <p id="author"> -{quote.author}</p>
+                    <p className='text-3xl lg:text-7xl ' id="quote">{quote.quote}</p>
+                    <p className='text-3xl lg:text-7xl ' id="author"> -{quote.author}</p>
                 </blockquote>
 
                 <Footer />

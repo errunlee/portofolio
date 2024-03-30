@@ -24,8 +24,6 @@ main {
   margin: 0px auto;
   padding: 0 0 120px 0px;
 
-  /* display: grid; */
-  padding: 1rem 4rem;
   grid-template-columns: repeat(12, 1fr);
 }
 
@@ -46,7 +44,7 @@ canvas {
 
 header {
   grid-column: 2 / span 5;
-  font-size: 2.5rem;
+  /* font-size: 2.5rem; */
   height: 100vh;
   display: flex;
   align-items: center;
@@ -58,7 +56,6 @@ header > * {
   border-radius: 20px;
 }
 header h1 {
-  font-size: 3.5rem;
   margin-bottom: 1rem;
   font-weight: 700 !important;
 }
@@ -84,7 +81,6 @@ blockquote {
 blockquote p {
   /* color: black; */
   background-color: white;
-  font-size: 4rem;
   display: inline;
   line-height: 1.1;
   background: var(--dark-bg);
@@ -156,9 +152,6 @@ blockquote p {
   transform: scale(1.25);
   transition: all 0.2s ease-in;
 }
-.footer h1 {
-  font-size: 5rem;
-}
 
 blockquote:not(:last-child) {
   height: 100vh;
@@ -177,4 +170,19 @@ main > * {
 
 main :last-child {
   min-height: auto !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .project_cards {
+    grid-template-columns: 1fr;
+  }
+  .footer .imgs img {
+    height: 50px;
+    width: 50px;
+  }
+
+  header div {
+    background-color: transparent;
+    text-align: center;
+  }
 }

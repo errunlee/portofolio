@@ -8,7 +8,7 @@
         viewBox="0 0 48 48"
       >
         <path
-          fill="#039be5"
+          fill="transparent"
           d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"
         ></path>
         <path

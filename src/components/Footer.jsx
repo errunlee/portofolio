@@ -6,7 +6,7 @@ const Footer = () => {
     let duration = 0.2;
     return (
         <blockquote class="footer">
-            <h1>Connect with me.</h1>
+            <h1 className='text-4xl lg:text-7xl '>Connect with me.</h1>
             <div class="imgs flex items-center">
                 {
                     socialMediaLinks.map((social, index) => {

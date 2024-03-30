@@ -2,15 +2,15 @@ import React from 'react'
 import { motion } from 'framer-motion'
 const About = () => {
     return (
-        <div className='flex w-[70%] items-center'>
+        <div className='flex w-full lg:w-[70%] items-center'>
             <motion.section
                 drag dragTransition={{
                     min: 0,
                     max: 0,
                     bounceDamping: 8
                 }}
-                initial={{ y: '-100%' }}
-                whileInView={{ y: 0 }}
+                initial={{ x: '-100%' }}
+                whileInView={{ x: 0 }}
                 transition={{ duration: 1 }}
             >
                 <h2>📜 About Me</h2>

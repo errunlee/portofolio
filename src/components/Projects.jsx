@@ -8,11 +8,6 @@ const Projects = () => {
     return (
         <>
             <motion.section
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                onAnimationComplete={() => setIsParentAnimated(true)}
                 class="light overflow-hidden">
                 <h2>👩🏽‍🚀 Projects</h2>
 
@@ -30,7 +25,7 @@ const Projects = () => {
                             return (
                                 <motion.div key={ind}
                                     initial={{ scale: 0 }}
-                                    animate={{ scale: isParentAnimated ? 1 : 0 }}
+                                    whileInView={{ scale: 1 }}
                                     transition={{ duration: 0.4, delay: duration += 0.2 }}
                                     class="box reveal">
                                     <img src={imageSrc} alt="note image" />
