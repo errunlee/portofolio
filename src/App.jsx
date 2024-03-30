@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import * as THREE from "three";
 import bg from './assets/texture/galaxy.png'
-import dp from './assets/jeff.png'
+import dp from './assets/jeff.jpg'
 import water from './assets/water.avif'
 import Main from './components/Main';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -102,11 +102,12 @@ function App() {
 
     const starmaterial = new THREE.MeshBasicMaterial({
       map: new THREE.TextureLoader().load(bg),
-      side: THREE.BackSide,
+      side: THREE.DoubleSide,
     });
 
-    const starmesh = new THREE.Mesh(stargeometry, starmaterial);
 
+
+    const starmesh = new THREE.Mesh(stargeometry, starmaterial);
     scene.add(starmesh);
 
 

@@ -27,6 +27,7 @@ const Projects = () => {
                                     initial={{ scale: 0 }}
                                     whileInView={{ scale: 1 }}
                                     transition={{ duration: 0.4, delay: duration += 0.2 }}
+                                    viewport={{ once: true }}
                                     class="box reveal">
                                     <img src={imageSrc} alt="note image" />
                                     <h2>{title}</h2>
@@ -39,7 +40,7 @@ const Projects = () => {
                         })
                     }
                 </div>
-            </motion.section>
+            </motion.section >
         </>
     )
 }

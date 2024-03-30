@@ -29,7 +29,7 @@ const Main = () => {
     }, [])
     return (
         <>
-            <main className=' px-2 lg:py-[1rem] lg:px-[4rem] pt-[20vh]  lg:pt-0 '>
+            <main className=' px-2 lg:py-[1rem] lg:px-[4rem] pt-[17vh]  lg:pt-0 '>
                 <motion.header
                     className='overflow-hidden mb-1 lg:max-w-[50%] h-[80vh] lg:h[100vh]'>
                     <div>
