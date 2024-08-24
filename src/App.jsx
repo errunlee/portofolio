@@ -1,16 +1,12 @@
-import { useEffect, useState } from 'react'
-import './App.css'
+import { useEffect } from "react";
+import "./App.css";
 import * as THREE from "three";
-import bg from './assets/texture/galaxy.png'
-import dp from './assets/jeff.jpg'
-import water from './assets/water.avif'
-import Main from './components/Main';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import * as dat from "lil-gui";
+import bg from "./assets/texture/galaxy.png";
+import dp from "./assets/jeff.jpg";
+import Main from "./components/Main";
 
 function App() {
   useEffect(() => {
-
     // Setup
     const scene = new THREE.Scene();
 
@@ -22,8 +18,7 @@ function App() {
     );
 
     const renderer = new THREE.WebGLRenderer({
-      canvas: document.querySelector("#bg")
-
+      canvas: document.querySelector("#bg"),
     });
 
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -38,14 +33,14 @@ function App() {
     const material = new THREE.MeshBasicMaterial({ color: 0x524947 });
     const torus = new THREE.Line(geometry, material);
     scene.add(torus);
-    torus.position.setZ(-20)
+    torus.position.setZ(-20);
+
     // Lights
     const pointLight = new THREE.PointLight(0xffffff);
     pointLight.position.set(5, 5, 5);
 
     const ambientLight = new THREE.AmbientLight(0xffffff);
     scene.add(pointLight, ambientLight);
-
 
     // Avatar
     const jeffTexture = new THREE.TextureLoader().load(dp);
@@ -57,12 +52,10 @@ function App() {
 
     scene.add(jeff);
 
-
     const moon = new THREE.Line(
       new THREE.BoxGeometry(4, 4, 4),
       new THREE.MeshNormalMaterial()
     );
-
 
     scene.add(moon);
 
@@ -73,12 +66,34 @@ function App() {
 
     if (window.innerWidth < 1000) {
       jeff.position.x = 0;
-      jeff.position.y = 1
-    }
-    else {
+      jeff.position.y = 1;
+    } else {
       jeff.position.x = 3;
-      jeff.position.y = 0
+      jeff.position.y = 0;
     }
+
+    // Star Field (Galaxy)
+    const stargeometry = new THREE.SphereGeometry(100, 64, 64);
+    const starmaterial = new THREE.MeshBasicMaterial({
+      map: new THREE.TextureLoader().load(bg),
+      side: THREE.DoubleSide,
+    });
+
+    const starmesh = new THREE.Mesh(stargeometry, starmaterial);
+    scene.add(starmesh);
+
+    // Mouse Interaction
+    let mouseX = 0;
+    let mouseY = 0;
+
+    function onMouseMove(event) {
+      // Normalize mouse coordinates
+      mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+      mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    }
+
+    document.addEventListener("mousemove", onMouseMove);
+
     // Scroll Animation
     function moveCamera() {
       const t = document.body.getBoundingClientRect().top;
@@ -88,8 +103,6 @@ function App() {
 
       jeff.rotation.y += 0.01;
 
-
-
       camera.position.z = t * -0.01;
       camera.position.x = t * -0.0002;
       camera.rotation.y = t * -0.0002;
@@ -97,19 +110,6 @@ function App() {
 
     document.body.onscroll = moveCamera;
     moveCamera();
-
-    const stargeometry = new THREE.SphereGeometry(100, 64, 64);
-
-    const starmaterial = new THREE.MeshBasicMaterial({
-      map: new THREE.TextureLoader().load(bg),
-      side: THREE.DoubleSide,
-    });
-
-
-
-    const starmesh = new THREE.Mesh(stargeometry, starmaterial);
-    scene.add(starmesh);
-
 
     // Animation Loop
     function animate() {
@@ -122,23 +122,25 @@ function App() {
       moon.rotation.x += 0.005;
 
       jeff.rotation.y += 0.006;
-      // jeff.rotation.z += 0.006;
-      // jeff.rotation.x += 0.006;
 
       starmesh.rotation.y += 0.0005;
-      // controls.update();
+
+      // Update texture offset based on mouse position
+      const texture = starmesh.material.map;
+      texture.offset.x = mouseX * 0.1;
+      texture.offset.y = mouseY * 0.1;
 
       renderer.render(scene, camera);
     }
 
     animate();
-  }, [])
+  }, []);
 
   return (
     <>
       <Main />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
