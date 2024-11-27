@@ -4,6 +4,8 @@ import LangsAndTools from "./LangsAndTools";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
 import Projects from "./Projects";
+import NeonCursor from "./cursor/NeonCursor";
+import CanvasCursor from "./cursor/CanvasCursor";
 const Main = () => {
   const [quote, setQuote] = useState({
     quote: "",
@@ -27,11 +29,11 @@ const Main = () => {
   }, []);
   return (
     <>
-      <main className=" px-2 lg:py-[1rem] lg:px-[4rem] pt-[17vh]  lg:pt-0 ">
+      <main className="md:px-2 lg:py-[1rem] lg:px-[4rem] pt-[17vh]  lg:pt-0 ">
         <motion.header className="overflow-hidden mb-1 lg:max-w-[50%] h-[80vh] lg:h[100vh]">
           <div>
             <motion.h1
-              className=" text-5xl lg:text-7xl "
+              className=" text-4xl md:text-7xl"
               drag
               dragTransition={{
                 min: 0,
@@ -47,15 +49,15 @@ const Main = () => {
                 bounce: 0.2,
               }}
             >
-              Hello, I'm Arun Khatri.
+              Hello,<br></br> I'm Arun Khatri.
             </motion.h1>
             <motion.p
-              className="text-xl lg:text-4xl font-sans"
+              className="text-xl lg:text-4xl font-sans tracking-widest sm:tracking-wide"
               initial={{ x: "-110%" }}
               animate={{ x: 0 }}
               transition={{ duration: 0.5, delay: 1 }}
             >
-              Student,Developer,Learner
+              Student, Developer, Learner
             </motion.p>
           </div>
         </motion.header>

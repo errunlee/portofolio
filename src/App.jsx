@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import "./App.css";
 import * as THREE from "three";
 import bg from "./assets/texture/galaxy.png";
-import dp from "./assets/jeff.jpg";
+import dp from "./assets/jeff.png";
 import Main from "./components/Main";
+import CanvasCursor from "./components/cursor/CanvasCursor";
 
 function App() {
   useEffect(() => {
@@ -44,10 +45,14 @@ function App() {
 
     // Avatar
     const jeffTexture = new THREE.TextureLoader().load(dp);
+    // jeffTexture.encoding = THREE.sRGBEncoding;
 
     const jeff = new THREE.Mesh(
       new THREE.BoxGeometry(2, 2, 2),
-      new THREE.MeshBasicMaterial({ map: jeffTexture, side: THREE.DoubleSide })
+      new THREE.MeshBasicMaterial({
+        map: jeffTexture,
+        side: THREE.DoubleSide,
+      })
     );
 
     scene.add(jeff);
@@ -121,7 +126,7 @@ function App() {
 
       moon.rotation.x += 0.005;
 
-      jeff.rotation.y += 0.006;
+      jeff.rotation.y += 0.002;
 
       starmesh.rotation.y += 0.0005;
 
@@ -138,6 +143,8 @@ function App() {
 
   return (
     <>
+      <CanvasCursor />
+
       <Main />
     </>
   );

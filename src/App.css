@@ -1,4 +1,9 @@
 @import url("https://use.typekit.net/jmk3xov.css");
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: Poppins !important;
+}
 
 canvas {
   position: fixed;
@@ -9,6 +14,7 @@ canvas {
 body {
   background: url("./assets/texture/galaxy.png");
 }
+
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --spacing: 350px;
@@ -53,15 +59,17 @@ header {
   align-items: center;
 }
 
-header > * {
+header>* {
   background: var(--dark-bg);
   padding: 2rem;
   border-radius: 20px;
 }
+
 header h1 {
   margin-bottom: 1rem;
   font-weight: 700 !important;
 }
+
 section {
   grid-column: 2 / 8;
   padding: 1rem;
@@ -96,10 +104,12 @@ blockquote p {
 .light {
   grid-column: 2/12;
 }
+
 .project_cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
 .project_cards .box {
   flex-direction: column;
   border: 1px solid #eecfbf;
@@ -113,6 +123,7 @@ blockquote p {
   /* opacity: 0; */
   /* transform: translateX(-100px); */
 }
+
 .box img {
   border-radius: 50%;
   margin-top: 15px;
@@ -121,10 +132,12 @@ blockquote p {
   transition: all 0.2s ease-in-out;
   display: block;
 }
+
 .box img:hover {
   transform: scale(1.25);
   cursor: pointer;
 }
+
 .box button {
   font-size: 18px;
   padding: 9px;
@@ -134,6 +147,7 @@ blockquote p {
   bottom: 5px;
   border: 2px solid purple;
 }
+
 .box button:hover {
   background: black;
   color: white;
@@ -148,9 +162,11 @@ blockquote p {
 .footer .imgs {
   margin: 10px 0;
 }
+
 .footer .imgs svg {
   margin: 0 10px;
 }
+
 .footer .img:hover {
   transform: scale(1.25);
   transition: all 0.2s ease-in;
@@ -167,7 +183,7 @@ blockquote:last-child {
   margin-bottom: 10rem;
 }
 
-main > * {
+main>* {
   min-height: 100vh;
 }
 
@@ -179,6 +195,7 @@ main :last-child {
   .project_cards {
     grid-template-columns: 1fr;
   }
+
   .footer .imgs img {
     height: 50px;
     width: 50px;
@@ -186,7 +203,19 @@ main :last-child {
   }
 
   header div {
-    background-color: transparent;
+    /* background-color: transparent; */
     text-align: center;
   }
+}
+
+canvas#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  /* Ensure it is above other elements */
+  pointer-events: none;
+  /* Avoid blocking interactions */
 }
