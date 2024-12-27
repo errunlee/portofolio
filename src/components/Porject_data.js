@@ -48,6 +48,6 @@ export const applications = [
     description:
       "This is a link shortening webapp that is made using shorcode API.",
     buttonLabel: "Check this out",
-    link: "https://linkshortenerbyarun.vercel.app/",
+    link: "https://linkshortbyarun.vercel.app/",
   },
 ];
