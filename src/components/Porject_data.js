@@ -1,6 +1,15 @@
 export const applications = [
   {
     imageSrc:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS24z82LJRJdq44VjAfm9114upM5vwMXAc6Ug&s",
+    title: "Trashformers (in progress)",
+    description:
+      "A full-stack platform for real-time waste management, resource recovery, and community engagement, featuring vehicle tracking, notifications, a marketplace, and gamification.",
+    buttonLabel: "Explore the Project",
+    link: "https://topjasp.vercel.app/",
+  },
+  {
+    imageSrc:
       "https://static.vecteezy.com/system/resources/thumbnails/035/947/339/small_2x/blog-3d-illustration-icon-png.png",
     title: "Blogspurr (blogging webapp)",
     description:
