@@ -1,32 +1,9 @@
-import React, { useEffect, useState } from "react";
-import About from "./About";
 import LangsAndTools from "./LangsAndTools";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
 import Projects from "./Projects";
-import NeonCursor from "./cursor/NeonCursor";
-import CanvasCursor from "./cursor/CanvasCursor";
+import NewSiteMessage from "./new-site-message";
 const Main = () => {
-  const [quote, setQuote] = useState({
-    quote: "",
-    author: "",
-  });
-
-  useEffect(() => {
-    let url = "https://type.fit/api/quotes";
-    let getQuote = fetch(url);
-    getQuote
-      .then((r) => {
-        return r.json();
-      })
-      .then((val) => {
-        let random = Math.floor(Math.random() * val.length);
-        setQuote({
-          quote: val[random].text,
-          author: val[random].author.slice(0, -10),
-        });
-      });
-  }, []);
   return (
     <>
       <main className="md:px-2 lg:py-[1rem] lg:px-[4rem] pt-[17vh]  lg:pt-0 ">
@@ -49,7 +26,7 @@ const Main = () => {
                 bounce: 0.2,
               }}
             >
-              Hello,<br></br> I'm Arun Khatri.
+              Hello,<br></br> I&apos;m Arun Khatri.
             </motion.h1>
             <motion.p
               className="text-xl lg:text-4xl font-sans tracking-widest sm:tracking-wide"
@@ -93,6 +70,7 @@ const Main = () => {
         </blockquote> */}
 
         <Footer />
+        <NewSiteMessage />
       </main>
     </>
   );
